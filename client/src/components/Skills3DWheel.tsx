@@ -47,8 +47,8 @@ export default function Skills3DWheel({ skills, className = "" }: Skills3DWheelP
 
       // Smooth rotation interpolation
       setRotation(prev => ({
-        x: prev.x + (targetRotation.x - prev.x) * 0.05,
-        y: prev.y + (targetRotation.y - prev.y) * 0.05
+        x: prev.x + (targetRotation.x - prev.x) * 0.08,
+        y: prev.y + (targetRotation.y - prev.y) * 0.08
       }));
 
       // Clear canvas with gradient
@@ -224,8 +224,8 @@ export default function Skills3DWheel({ skills, className = "" }: Skills3DWheelP
         const deltaY = clientY - lastMousePos.y;
         
         setTargetRotation(prev => ({
-          x: prev.x + deltaY * 0.01,
-          y: prev.y + deltaX * 0.01
+          x: prev.x + deltaY * 0.003,
+          y: prev.y + deltaX * 0.003
         }));
         
         lastMousePos = { x: clientX, y: clientY };
@@ -269,7 +269,7 @@ export default function Skills3DWheel({ skills, className = "" }: Skills3DWheelP
       if (!isDragging) {
         setTargetRotation(prev => ({
           ...prev,
-          y: prev.y + 0.005
+          y: prev.y + 0.002
         }));
       }
     };
