@@ -97,6 +97,22 @@
   .bg-cyber-green { background-color: var(--cyber-green); }
   .bg-cyber-pink { background-color: var(--cyber-pink); }
   .bg-cyber-amber { background-color: var(--cyber-amber); }
+  
+  /* Responsive text colors for Tailwind */
+  .text-cyan { color: var(--cyber-cyan); }
+  .text-pink { color: var(--cyber-pink); }  
+  .text-green { color: var(--cyber-green); }
+  .text-amber { color: var(--cyber-amber); }
+  
+  .bg-cyan { background-color: var(--cyber-cyan); }
+  .bg-pink { background-color: var(--cyber-pink); }
+  .bg-green { background-color: var(--cyber-green); }
+  .bg-amber { background-color: var(--cyber-amber); }
+  
+  .border-cyan { border-color: var(--cyber-cyan); }  
+  .border-pink { border-color: var(--cyber-pink); }
+  .border-green { border-color: var(--cyber-green); }
+  .border-amber { border-color: var(--cyber-amber); }
   .bg-terminal-bg { background-color: var(--terminal-bg); }
   .border-cyber-cyan { border-color: var(--cyber-cyan); }
   .border-cyber-green { border-color: var(--cyber-green); }
