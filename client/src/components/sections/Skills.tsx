@@ -1,62 +1,30 @@
 import Terminal from "@/components/Terminal";
-import HolographicCard from "@/components/HolographicCard";
-import SkillsRadar from "@/components/SkillsRadar";
+import CodeMatrix from "@/components/CodeMatrix";
 
 export default function Skills() {
-  const skillCategories = [
-    {
-      title: "Programming Languages",
-      color: "cyan" as const,
-      skills: [
-        { name: "JavaScript", level: 95 },
-        { name: "TypeScript", level: 90 },
-        { name: "Rust", level: 85 },
-        { name: "Python", level: 88 },
-        { name: "Java", level: 75 },
-        { name: "C++", level: 70 }
-      ]
-    },
-    {
-      title: "Frameworks & Libraries",
-      color: "green" as const,
-      skills: [
-        { name: "React.js", level: 92 },
-        { name: "Node.js", level: 89 },
-        { name: "Express.js", level: 87 },
-        { name: "Actix Web", level: 83 },
-        { name: "TensorFlow", level: 85 },
-        { name: "OpenCV", level: 81 }
-      ]
-    },
-    {
-      title: "Databases & ORM",
-      color: "pink" as const,
-      skills: [
-        { name: "PostgreSQL", level: 88 },
-        { name: "MongoDB", level: 82 },
-        { name: "Prisma", level: 85 },
-        { name: "Diesel", level: 80 }
-      ]
-    },
-    {
-      title: "Cloud & DevOps",
-      color: "amber" as const,
-      skills: [
-        { name: "AWS S3", level: 79 },
-        { name: "Cloudflare", level: 82 },
-        { name: "Vercel", level: 84 },
-        { name: "Git", level: 93 }
-      ]
-    }
+  const matrixSkills = [
+    { text: "JavaScript", language: "js", level: 95 },
+    { text: "TypeScript", language: "ts", level: 90 },
+    { text: "Rust", language: "rs", level: 85 },
+    { text: "Python", language: "py", level: 88 },
+    { text: "React.js", language: "jsx", level: 92 },
+    { text: "Node.js", language: "js", level: 89 },
+    { text: "Express.js", language: "js", level: 87 },
+    { text: "Actix Web", language: "rs", level: 83 },
+    { text: "TensorFlow", language: "py", level: 85 },
+    { text: "PostgreSQL", language: "sql", level: 88 },
+    { text: "MongoDB", language: "db", level: 82 },
+    { text: "AWS S3", language: "cloud", level: 79 },
+    { text: "Cloudflare", language: "cdn", level: 82 },
+    { text: "Git", language: "vcs", level: 93 }
   ];
 
-  // Combine all skills for radar visualization
-  const allSkills = skillCategories.flatMap(category => 
-    category.skills.map(skill => ({
-      ...skill,
-      category: category.title
-    }))
-  );
+  const skillStats = [
+    { category: "Languages Mastered", count: 6, trend: "+2 this year" },
+    { category: "Frameworks Built With", count: 12, trend: "Production Ready" },  
+    { category: "Databases Optimized", count: 8, trend: "Zero Downtime" },
+    { category: "Cloud Services Used", count: 15, trend: "Auto-Scaling" }
+  ];
 
   const renderSkillBar = (level: number) => {
     const blocks = Math.floor(level / 8);
@@ -78,49 +46,48 @@ export default function Skills() {
             <p className="text-cyber-cyan mt-4">cat skills.txt | grep -v "job_offers"</p>
           </div>
 
-          <div className="grid lg:grid-cols-3 gap-8">
-            {/* 3D Skills Radar */}
-            <div className="lg:col-span-2">
-              <HolographicCard glowColor="cyan" className="h-full">
-                <div className="space-y-4">
-                  <h3 className="text-cyber-pink font-bold text-xl text-center">
-                    Skills Quantum Radar
+          {/* Skills Matrix - Revolutionary Full-Width Display */}
+          <div className="relative">
+            <div className="absolute inset-0 bg-gradient-to-br from-cyber-purple via-cyber-black to-cyber-purple opacity-20 rounded-lg"></div>
+            <div className="relative border-2 border-cyber-cyan border-opacity-30 rounded-lg overflow-hidden backdrop-blur-sm">
+              <div className="p-6">
+                <div className="text-center mb-6">
+                  <h3 className="text-cyber-pink font-bold text-2xl holographic-text mb-2">
+                    THE CODE MATRIX
                   </h3>
-                  <p className="text-cyber-cyan text-sm text-center opacity-80">
-                    Real-time skill level visualization with neural network mapping
+                  <p className="text-cyber-cyan text-sm opacity-80">
+                    Where skills meet the digital void - Real-time capability visualization
                   </p>
-                  <SkillsRadar skills={allSkills} />
                 </div>
-              </HolographicCard>
-            </div>
-
-            {/* Skill Categories */}
-            <div className="space-y-6">
-              {skillCategories.map((category, index) => (
-                <HolographicCard key={index} glowColor={category.color} className="h-full">
-                  <div className="space-y-4">
-                    <h3 className="text-cyber-pink font-semibold text-lg border-b border-cyber-cyan border-opacity-30 pb-2">
-                      {category.title}
-                    </h3>
-                    <div className="space-y-3">
-                      {category.skills.map((skill, skillIndex) => (
-                        <div key={skillIndex} className="space-y-1">
-                          <div className="flex items-center justify-between">
-                            <span className="text-cyber-cyan text-sm">{skill.name}</span>
-                            <span className="text-cyber-green font-mono text-xs">{skill.level}%</span>
-                          </div>
-                          <div className="w-full bg-cyber-black bg-opacity-50 rounded-full h-1">
-                            <div 
-                              className="bg-gradient-to-r from-cyber-cyan to-cyber-pink h-1 rounded-full animate-pulse-glow"
-                              style={{ width: `${skill.level}%` }}
-                            />
-                          </div>
-                        </div>
-                      ))}
+                
+                <div className="h-96 relative">
+                  <CodeMatrix skills={matrixSkills} />
+                  
+                  {/* Overlay stats */}
+                  <div className="absolute top-4 left-4 space-y-2">
+                    {skillStats.map((stat, index) => (
+                      <div key={index} className="bg-black bg-opacity-60 p-3 rounded border border-cyber-cyan border-opacity-30">
+                        <div className="text-cyber-green text-sm font-bold">{stat.count}</div>
+                        <div className="text-cyber-cyan text-xs">{stat.category}</div>
+                        <div className="text-cyber-amber text-xs opacity-80">{stat.trend}</div>
+                      </div>
+                    ))}
+                  </div>
+                  
+                  {/* Performance indicators */}
+                  <div className="absolute bottom-4 right-4 space-y-2 text-right">
+                    <div className="text-cyber-green text-sm font-mono">
+                      <span className="animate-blink">{'>'}</span> System Status: OPERATIONAL
+                    </div>
+                    <div className="text-cyber-cyan text-sm font-mono">
+                      <span className="animate-blink">{'>'}</span> Skill Level: MAXIMUM
+                    </div>
+                    <div className="text-cyber-pink text-sm font-mono">
+                      <span className="animate-blink">{'>'}</span> Hiring Status: WAITING...
                     </div>
                   </div>
-                </HolographicCard>
-              ))}
+                </div>
+              </div>
             </div>
           </div>
 

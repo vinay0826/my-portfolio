@@ -25,7 +25,7 @@ export default function SkillsRadar({ skills, className = "" }: SkillsRadarProps
 
     const centerX = canvas.width / 2;
     const centerY = canvas.height / 2;
-    const maxRadius = Math.min(centerX, centerY) - 40;
+    const maxRadius = Math.min(centerX, centerY) - 60;
 
     const draw = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -140,7 +140,7 @@ export default function SkillsRadar({ skills, className = "" }: SkillsRadarProps
     <canvas
       ref={canvasRef}
       className={`w-full h-full ${className}`}
-      style={{ minHeight: "400px" }}
+      style={{ minHeight: "500px" }}
     />
   );
 }

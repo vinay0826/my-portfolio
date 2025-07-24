@@ -31,9 +31,8 @@ export default function Publications() {
   ];
 
   const stats = [
-    { value: "1", label: "Publications" },
-    { value: "3", label: "Blog Posts" },
-    { value: "∞", label: "Lines of Code" }
+    { value: "∞", label: "Lines of Code" },
+    { value: "0", label: "Recognition Received" }
   ];
 
   return (
@@ -99,10 +98,10 @@ export default function Publications() {
 
             {/* Stats */}
             <div className="mt-8 pt-6 border-t border-cyber-cyan border-opacity-30">
-              <div className="grid grid-cols-3 gap-4 text-center">
+              <div className="grid grid-cols-2 gap-4 text-center">
                 {stats.map((stat, index) => (
                   <div key={index}>
-                    <div className={`text-2xl font-bold ${index === 0 ? 'text-cyber-green' : index === 1 ? 'text-cyber-pink' : 'text-cyber-amber'}`}>
+                    <div className={`text-2xl font-bold ${index === 0 ? 'text-cyber-green' : 'text-cyber-pink'}`}>
                       {stat.value}
                     </div>
                     <div className="text-cyber-cyan text-opacity-70 text-sm">{stat.label}</div>
