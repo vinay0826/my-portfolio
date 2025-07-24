@@ -1,0 +1,101 @@
+Overall Theme
+Style:
+Futuristic Hacker Terminal UI
+Looks like a terminal from a 2077 cyberpunk mainframe, where you’re typing logs of your journey, one commit at a time.
+
+Dark Mode Default
+Deep purples, neon greens, glitchy text, flickering cursor effects. Think [Vaporwave x Developer Terminal].
+
+Tech Fonts
+Use Fira Code, JetBrains Mono, or IBM Plex Mono for authenticity.
+
+🧠 Section Ideas
+1. Landing Page – afailedprogrammer.dev
+“Welcome to the terminal of someone who wrote code that changed everything — just not his job status… yet.”
+
+Terminal-style typing:
+
+bash
+Copy
+Edit
+$ whoami
+> Vinay Nalagatla
+$ skills --level=god --luck=0
+> Libraries: Node.js, React.js, Rust, Actix, Express...
+Flickering cursor and typing intro using a typing animation:
+
+txt
+Copy
+Edit
+> Still jobless... despite building scalable AI agents, Rust backends, and cloud systems.
+> But hey, the code works perfectly.
+2. Skills – ./skills.sh
+Terminal cards:
+
+bash
+Copy
+Edit
+$ cat skills.txt
+
+Programming Languages:
+- JavaScript, TypeScript, Rust, Python, Java, C++
+
+Frameworks & Libraries:
+- React.js, Recoil, Express.js, Node.js, Actix Web, SQLx, Diesel
+
+Databases:
+- PostgreSQL, MongoDB, Prisma
+
+Cloud & DevOps:
+- AWS S3, Cloudflare, Vercel, Git
+
+AI/ML:
+- TensorFlow, Keras, OpenCV
+3. Projects – ./projects.sh
+Each project card looks like a README.md:
+
+✅ Violence Detection in Crowd
+
+Python, CNN + LSTM, OpenCV
+
+Real-time detection using hybrid DL models
+
+🤖 AI Agents
+
+ChatGPT Wrappers, Langchain-inspired
+
+🛠️ Rust Backend Services
+
+QUIC streaming, Wasm plugins, eBPF routing
+
+🌐 MERN Stack Projects
+
+Auth systems, dashboards, product trackers
+
+4. Publications & Blog – ./logs.sh
+A glitchy Markdown-style page with your 2024 publication and dev logs like:
+
+"How I Built an LSTM-CNN Hybrid for Violence Detection"
+
+"How I Built My Own ChatGPT Wrapper in Rust + Node.js"
+
+"Still No Job. Here's What I Deployed Instead."
+
+5. About Me – ./about.sh
+txt
+Copy
+Edit
+$ cat about-vinay.txt
+
+Just a failed programmer trying to beat the system.
+I build real-time APIs in Rust, production-grade AI systems in Python, and web apps that scale.
+
+Companies didn’t hire me. So I built things they couldn’t.
+6. Contact / Call to Action – ./hire.sh
+bash
+Copy
+Edit
+$ curl -X POST https://vinay.dev/hire-me
+> Response 200 OK
+> Resume.pdf downloaded.
+> Let's talk: vinaynalagatla@protonmail.com
